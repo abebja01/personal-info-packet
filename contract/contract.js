@@ -1,22 +1,4 @@
-const Web3 = require('web3');
-
-
-//const ganache = require('ganache-cli');
-//const provider = ganache.provider();
-//const web3 = new Web3(provider);
-//const abi = require('./compile').interface;
-//const byteCode = require('./compile').bytecode;
-//console.log(abi);
-
-
-
-var web3 = new Web3('ws://localhost:8545');
- 
-    if(web3==undefined){
-		web3 = new Web3(web3.currentProvider);
-	}else{}
-    // Set the provider you want from Web3.providers
-    web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+const web3 = require('./web3'); 	
  
 var contract =   web3.eth.contract([
 	{
@@ -303,7 +285,7 @@ var contract =   web3.eth.contract([
 		"type": "function"
 	}
 ]);
-var myContract = contract.at('0xaf5127143a7d8fe47c975150f4a550259d9ffee3');
+var myContract = contract.at('0x20f7efdcd79c02ab34a31640f279f1951b3c2f17');
 
 
 module.exports = myContract;

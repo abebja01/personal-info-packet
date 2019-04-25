@@ -1,1 +1,182 @@
-<p>PANEL</p>
+
+<!doctype html>
+<html lang="en">
+    
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+
+<!-- Custom styles for this template -->
+<link href="../assets/css/home.css" rel="stylesheet">
+
+
+
+
+
+<head>
+</head>
+
+<body>
+
+
+    <div class="container">
+            <form  method="POST" action="/panel" >
+        <div class="row">
+            
+            <div class="col-md-6 g-ml-50 text-center">
+
+                <h3 class="center g-mb-25 text-info">
+                    Person Info
+                </h3>
+                <div class="row">
+                    <div class="col-md-6  g-py-3 ">
+                        <div class=" align-middle   text-primary text-size-16   "> First Name: </div>
+                        <div class=" align-middle text-primary text-size-16  "> Last Name: </div>
+                        <div class=" align-middle text-primary text-size-16  "> Birthday: </div>
+                        <div class=" align-middle text-primary text-size-16  "> Birthplace: </div>
+                        <div class=" align-middle text-primary text-size-16  "> SSN: </div>
+                        <div class=" align-middle text-primary text-size-16 "> Sex: </div>
+
+                    </div>
+
+                    <div class="col-md-6  g-py-3 ">
+                        <div class=" align-middle   text-size-16   ">
+                            <input type="text" class="form-control" placeholder="First Name" name="firstname" style="height: 22px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="Last Name" name="lastname" style="height: 22px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="DOB" name="dob" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="Place of Birth" name="birthplace" style="height: 25px;"/>
+                        </div>
+
+                        <div class=" align-middle   text-size-16  ">
+                                <input type="text" class="form-control" placeholder="Social Security Number" name="ssn" style="height: 25px;"/>
+                            </div>
+
+                        <div class=" align-middle   text-size-16 ">
+                            <input type="text" class="form-control" placeholder="Sex" name="sex" style="height: 26px;"/>
+                        </div>
+
+                    </div>
+
+                </div>
+                <hr>
+                <h3 class="center g-mb-25 text-info">
+                    Education
+                </h3>
+                <div class="row">
+                    <div class="col-md-6 g-py-3 ">
+                        <div class=" align-middle text-secondary text-size-16  "> College</div>
+                        <div class=" align-middle text-secondary text-size-16  "> Bachelor Type </div>
+                        <div class=" align-middle text-secondary text-size-16  "> Major </div>
+                        <div class=" align-middle text-secondary text-size-16  "> GPA</div>
+                        <div class=" align-middle text-secondary text-size-16  "> Has Graduated</div>
+                        <div class=" align-middle text-secondary text-size-16  "> Currently in School</div>
+
+                    </div>
+
+
+                    <div class="col-md-6  g-py-3 ">
+                        <div class=" align-middle   text-size-16   ">
+                            <input type="text" class="form-control" placeholder="College" name="college" style="height: 22px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="Bachelor Degree" name="degree" style="height: 24px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="Major" name="major" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="GPA" name="gpa" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16 ">
+                                <input type="text" class="form-control" placeholder="Completed" name="completed" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16 ">
+                            <input type="text" class="form-control" placeholder="Enrolled?" name="enrolled" style="height: 26px;"/>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <h3 class="center g-mb-25 text-info">
+                    Family Info
+                </h3>
+
+                <div class="row g-py-3">
+
+                    <div class="col-md-6 g-py-3 ">
+                        <div class=" align-middle text-primary text-size-16  "> First Parent</div>
+                        <div class=" align-middle text-primary text-size-16  "> Second Parent </div>
+
+                    </div>
+                    <div class=" col-md-6 g-py-3 ">
+                        <div class=" align-middle  text-size-16  ">
+                            <input type="text" class="form-control" placeholder="First parent" name="firstparent" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle  text-size-16  ">
+                            <input type="text" class="form-control" placeholder="Second parent" name="secondparent" style="height: 26px;"/>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h3 class="center g-mb-25 text-info">
+                    Address
+                </h3>
+                <div class="row">
+                    <div class="col-md-6  g-py-3 ">
+                        <div class=" align-middle text-secondary text-size-16  "> Country</div>
+                        <div class=" align-middle text-secondary text-size-16  "> City </div>
+                        <div class=" align-middle text-secondary text-size-16  "> Street </div>
+                        <div class=" align-middle text-secondary text-size-16  "> Apt </div>
+                        <div class=" align-middle text-secondary text-size-16  "> Zip Code </div>
+                    </div>
+
+                    <div class="col-md-6  g-py-3 ">
+                        <div class=" align-middle   text-size-16   ">
+                            <input type="text" class="form-control" placeholder="Country" name="country" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="City" name="city" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="Street" name="street" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16  ">
+                            <input type="text" class="form-control" placeholder="Apt" name="apt" style="height: 26px;"/>
+                        </div>
+                        <div class=" align-middle   text-size-16 ">
+                            <input type="text" class="form-control" placeholder="Zip Code" name="zipcode" style="height: 24px;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 g-ml-50 text-center" style="margin-top:100px">
+                <img src="../assets/images/logo1.png " width="500px" height="250px">
+                
+                <div style="margin-top:20px">
+                    <button  type="submit" class="btn btn-primary">Submit Info </button>
+                </div>
+            
+                
+
+            </div>
+           
+
+        </div>
+
+    </form>
+
+    </div>
+
+</body>
+ 
