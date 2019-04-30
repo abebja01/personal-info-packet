@@ -1,6 +1,9 @@
+
+
 module.exports = {
 
-    contractAddress : "0x5edf6d230e31a86c6592f57ec5b14b92064e31f3",
-    gasAmount : 1000000
+    contractAddress : "0x5d8273de63aadb23c87105688ff611a62682436f",
+    gasAmount : 1000000, // gas amount 
+    httpProvAddress:  "http://localhost:8545" //"<eth account address>"
 
 }

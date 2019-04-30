@@ -1,7 +1,7 @@
-const web3 = require('./web3'); 	
+const web3 = require('./web3');
 const contractAdress = require('../config').contractAddress;
- 
-var contract =   web3.eth.contract([
+
+var contract = web3.eth.contract([
 	{
 		"constant": false,
 		"inputs": [
@@ -287,6 +287,6 @@ var contract =   web3.eth.contract([
 	}
 ]);
 var myContract = contract.at(contractAdress);
-web3.eth.defaultAccount = web3.eth.accounts[0];
+web3.eth.defaultAccount = web3.eth.accounts[0]; // specify the account , ideally the account in an dApp application should change and be an input for the user so they can use their own account
 
 module.exports = myContract;
