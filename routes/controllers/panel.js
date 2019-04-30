@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();   
 const myContract = require('../../contract/contract');
 const web3 = require('../../contract/web3'); 
- 
+const gasAmount = require('../../config').gasAmount;
  
 app.get('/', (req,res)=>{
     res.render('layouts/panel');
@@ -11,70 +11,62 @@ app.get('/', (req,res)=>{
 
 
 function addPersonInfo(req,res,next){
-    web3.eth.defaultAccount = web3.eth.accounts[0];   
-  
-    myContract.addPerson(req.body.firstname,req.body.lastname,req.body.birthday,req.body.birthplace,req.body.ssn,req.body.sex,{from: web3.eth.defaultAccount, gas: 1000000},function(err,response){
-        if(err) {
-            req.err=err;
-        } 
-        else{
-            return next();
-        }
-        
-        
+    
+    var lastname = req.body.lastname+"";
+    var dob = req.body.dob+"";
+    var birthplace =req.body.birthplace+"";
+    var ssn =req.body.ssn+"";
+    var gender =req.body.sex+"";
+    var firstname = req.body.firstname+"";
+
+    myContract.addPerson(firstname,lastname,dob,birthplace,ssn,gender,{from: web3.eth.defaultAccount, gas: gasAmount});
        
-    })
+    return next();
+   
+  
 }
+ 
+       
+
 
 function addFamilyInfo(req,res,next){
-    web3.eth.defaultAccount = web3.eth.accounts[0];
-    myContract.addFamilyData(req.body.ssn,req.body.firstparent,req.body.secondparent,{from: web3.eth.defaultAccount, gas: 1000000},function(err,response){
-        if(err) {
-            req.err=err;
-        } 
-        else{
-           
-        }
-        
-        return next();
+    
+    var ssn = req.body.ssn;
+    var firstparent = req.body.firstparent;
+    var secondparent = req.body.secondparent;
+    myContract.addFamilyData(ssn,firstparent,secondparent,{from: web3.eth.defaultAccount, gas: gasAmount});
+    return next();
        
-    })
+    
 }
 
 function addAddress(req,res,next){
-    web3.eth.defaultAccount = web3.eth.accounts[0];
-    myContract.addAddress(req.body.ssn,req.body.country,req.body.city,req.body.street,req.body.apt,req.body.zipcode,{from: web3.eth.defaultAccount, gas: 1000000},function(err,response){
-        if(err) {
-            req.err=err;
-        } 
-        else{
-            req.address = response;
-        }
+   
+    var ssn = req.body.ssn;
+    var country = req.body.country;
+    var city = req.body.city;
+    var street = req.body.street;
+    var apt = req.body.apt;
+    var zipcode = req.body.zipcode;
+    myContract.addAddress(ssn,country,city,street,apt,zipcode,{from: web3.eth.defaultAccount, gas: gasAmount});
         
-        return next();
+    return next();
        
-    })
+    
 }
 
 function addEducation(req,res,next){
-    web3.eth.defaultAccount = web3.eth.accounts[0];
-    myContract.addEducation(req.body.ssn,req.body.college,req.body.degree,req.body.major,req.body.gpa,req.body.completed,req.body.enrolled,{from: web3.eth.defaultAccount, gas: 1000000},function(err,response){
-        if(err) {
-            req.err=err;
-        } 
-        else{
-            req.education = response;
-        }
-        
-        return next();
-       
-    })
+     
+    var ssn = req.body.ssn;
+    var college = req.body.college;
+    var degree = req.body.degree;
+    var major = req.body.major;
+    var gpa = req.body.gpa;
+    var completed = req.body.completed;
+    var enrolled = req.body.enrolled;
+    myContract.addEducation(ssn,college,degree,major,gpa,completed,enrolled,{from: web3.eth.defaultAccount, gas: gasAmount});
+    return next();
 }
-
-
-
-
-
 
 
 

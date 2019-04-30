@@ -1,4 +1,5 @@
 const web3 = require('./web3'); 	
+const contractAdress = require('../config').contractAddress;
  
 var contract =   web3.eth.contract([
 	{
@@ -285,7 +286,7 @@ var contract =   web3.eth.contract([
 		"type": "function"
 	}
 ]);
-var myContract = contract.at('0x20f7efdcd79c02ab34a31640f279f1951b3c2f17');
-
+var myContract = contract.at(contractAdress);
+web3.eth.defaultAccount = web3.eth.accounts[0];
 
 module.exports = myContract;
